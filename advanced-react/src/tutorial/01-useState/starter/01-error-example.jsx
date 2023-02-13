@@ -1,16 +1,19 @@
+import React from "react";
 const ErrorExample = () => {
-  let count = 0;
+  let title = "Random title";
+
   const handleClick = () => {
-    count += 1;
-    console.log(count);
+    title = "hello people";
+    console.log(title);
   };
+
   return (
-    <div>
-      <p>{count}</p>
-      <button type="button" onClick={handleClick}>
-        increase
+    <React.Fragment>
+      <h2>{title}</h2>
+      <button type="button" className="btn" onClick={handleClick}>
+        Click
       </button>
-    </div>
+    </React.Fragment>
   );
 };
 

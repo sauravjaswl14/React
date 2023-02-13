@@ -1,20 +1,28 @@
-import { useState } from 'react';
+import React, { useState, useEffect } from "react";
 
 const UseEffectBasics = () => {
   const [value, setValue] = useState(0);
-  const sayHello = () => {
-    console.log('hello there');
-  };
 
-  sayHello();
+  useEffect(() => {
+    console.log("call useEfect");
+    if (value >= 1) {
+      document.title = `New Messages(${value})`;
+    }
+  }, [value]);
 
+  useEffect(() => {
+    console.log("Hello world");
+  }, []);
+
+  console.log("render component");
   return (
-    <div>
-      <h1>value : {value}</h1>
-      <button className='btn' onClick={() => setValue(value + 1)}>
-        click me
+    <React.Fragment>
+      <h2>{value}</h2>
+      <button type="button" className="btn" onClick={() => setValue(value + 1)}>
+        click
       </button>
-    </div>
+    </React.Fragment>
   );
 };
+
 export default UseEffectBasics;
