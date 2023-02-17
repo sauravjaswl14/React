@@ -17,7 +17,7 @@ const FetchData = () => {
 
   return (
     <>
-      <h2>github users</h2>
+      <h2>github Users</h2>
       <ul className="users">
         {users.map((user) => {
           const { id, login, avatar_url, html_url } = user;
@@ -26,7 +26,7 @@ const FetchData = () => {
               <img src={avatar_url} alt={login} />
               <div>
                 <h4>{login}</h4>
-                <a href={html_url}></a>
+                <a href={html_url}>profile</a>
               </div>
             </li>
           );

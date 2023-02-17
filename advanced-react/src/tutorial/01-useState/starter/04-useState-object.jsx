@@ -1,21 +1,21 @@
 import { useState } from "react";
 
 const UseStateObject = () => {
-  const [people, setPeople] = useState({
+  const [person, setPerson] = useState({
     name: "peter",
     age: 24,
-    message: "random message",
+    message: "Random Message",
   });
-  const changeMessage = () => {
-    setPeople({ ...people, message: "hello world" });
+  const updatePerson = () => {
+    setPerson({ ...person, message: "Hello Wrold" });
   };
   return (
     <>
-      <h3>{people.name}</h3>
-      <h3>{people.age}</h3>
-      <h3>{people.message}</h3>
-      <button type="button" className="btn" onClick={changeMessage}>
-        change message
+      <h3>{person.name}</h3>
+      <h3>{person.age}</h3>
+      <h3>{person.message}</h3>
+      <button type="button" className="btn" onClick={updatePerson}>
+        update message
       </button>
     </>
   );

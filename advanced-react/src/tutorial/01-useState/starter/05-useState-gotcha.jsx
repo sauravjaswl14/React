@@ -2,6 +2,7 @@ import { useState } from "react";
 
 const UseStateGotcha = () => {
   const [value, setValue] = useState(0);
+
   const reset = () => {
     setValue(0);
   };
@@ -13,37 +14,25 @@ const UseStateGotcha = () => {
       });
     }, 2000);
   };
+
   return (
     <>
-      <section style={{ margin: "4rem 0" }}>
-        <h2>complex counter</h2>
-        <h3>{value}</h3>
-        <button
-          type="button"
-          className="btn"
-          onClick={() => setValue(value + 1)}
-        >
-          increase
-        </button>
-        <button type="button" className="btn" onClick={reset}>
-          reset
-        </button>
-        <button
-          type="button"
-          className="btn"
-          onClick={() => setValue(value - 1)}
-        >
-          decrease
-        </button>
-      </section>
-
-      <section style={{ margin: "4rem 0" }}>
-        <h2>More complex counter</h2>
-        <h3>{value}</h3>
-        <button type="button" className="btn" onClick={complexIncrease}>
-          increase later
-        </button>
-      </section>
+      <h2>Regular Counter</h2>
+      <h1>{value}</h1>
+      <button className="btn" type="button" onClick={() => setValue(value - 1)}>
+        decrease
+      </button>
+      <button className="btn" type="button" onClick={reset}>
+        reset
+      </button>
+      <button className="btn" type="button" onClick={() => setValue(value + 1)}>
+        increase
+      </button>
+      <h2>Complex counter</h2>
+      <h1>{value}</h1>
+      <button className="btn" type="button" onClick={complexIncrease}>
+        increase
+      </button>
     </>
   );
 };

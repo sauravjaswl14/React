@@ -1,37 +1,16 @@
 import { useState } from "react";
-
-// const UseStateBasics = () => {
-//   const [count, setCount] = useState(0);
-//   const handleClick = () => {
-//     setCount(count + 1);
-//   };
-//   return (
-//     <div>
-//       <h2>{count}</h2>
-//       <button type="button" className="btn" onClick={handleClick}>
-//         click
-//       </button>
-//     </div>
-//   );
-// };
-
 const UseStateBasics = () => {
-  let title = "Random Title";
-  const [text, setText] = useState(title);
+  const [count, setCount] = useState(0);
   const handleClick = () => {
-    if (text === "Random Title") {
-      setText("Hello People");
-    } else {
-      setText("Random Title");
-    }
+    setCount(count + 1);
   };
   return (
-    <>
-      <h2>{text}</h2>
+    <div>
+      <h2>{count}</h2>
       <button type="button" className="btn" onClick={handleClick}>
-        change title
+        click
       </button>
-    </>
+    </div>
   );
 };
 
